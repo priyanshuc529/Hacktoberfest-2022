@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <title>JavaScript Form Validation </title>
+   <link rel="stylesheet" href="style.css">
+   <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+</head>
+
+<body>
+   <div class="container">
+     <h1> Register for Google Talks</h1>
+     <h3> A Day at Google!! </h3>
+     <br>
+
+       <form id="signup" class="form">
+           <div class="form-field">
+               <label for="username">Username:</label>
+               <input type="text" name="username" id="username">
+               <small></small>
+           </div>
+
+           <div class="form-field">
+               <label for="email">Email:</label>
+               <input type="text" name="email" id="email">
+               <small></small>
+           </div>
+
+           <div class="form-field">
+               <label for="password">Password:</label>
+               <input type="password" name="password" id="password">
+               <small></small>
+           </div>
+
+
+           <div class="form-field">
+               <label for="confirm-password">Confirm Password:</label>
+               <input type="password" name="confirm-password" id="confirm-password">
+               <small></small>
+           </div>
+
+           <div class="form-field">
+               <button type="button" id="submit" name="submit" class="btn"> Sign Up!! </button>
+               <!-- <input type="submit" value="Sign Up"> -->
+           </div>
+       </form>
+   </div>
+
+   <script src="./valid.js"></script>
+</body>
+</html>
