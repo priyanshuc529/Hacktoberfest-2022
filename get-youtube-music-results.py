@@ -9,14 +9,18 @@ head =  {
     }
 
 def get_youtube_music_results(query):
+
     query = query.replace(' ','+')
     response = requests.get("https://music.youtube.com/search?q="+query, headers=head).text
+
     result = response.encode().decode("unicode-escape")
     result = html.unescape(result)
+
     soup = BeautifulSoup(result, 'html.parser').find(lambda tag:tag.name=="script" and "initialData" in tag.text).text
     script = soup.split(";")[2].removesuffix(')').removeprefix('initialData.push(').split("'")[5]
     yee = json.loads(script)['contents']['tabbedSearchResultsRenderer']['tabs'][0]
     yee2 = yee['tabRenderer']['content']['sectionListRenderer']['contents']
+    
     for content in yee2:
         musicShelfRendererContents = content['musicShelfRenderer']['contents']
         for musicShelfRendererContent in musicShelfRendererContents:
